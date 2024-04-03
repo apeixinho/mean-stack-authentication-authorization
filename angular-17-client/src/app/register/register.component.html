@@ -13,6 +13,16 @@
       novalidate
     >
       <div class="form-group">
+        <label for="role">Role</label>
+
+        <select class="form-control" name="role" [(ngModel)]="form.role">
+          <option *ngFor="let role of userRoles">
+            {{ role.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="username">Username</label>
         <input
           type="text"
@@ -29,11 +39,9 @@
         <div class="invalid-feedback">
           @if (username.errors['required']) {
           <div>Username is required</div>
-          }
-          @if (username.errors['minlength']) {
+          } @if (username.errors['minlength']) {
           <div>Username must be at least 3 characters</div>
-          }
-          @if (username.errors['maxlength']) {
+          } @if (username.errors['maxlength']) {
           <div>Username must be at most 20 characters</div>
           }
         </div>
@@ -55,8 +63,7 @@
         <div class="invalid-feedback">
           @if (email.errors['required']) {
           <div>Email is required</div>
-          }
-          @if (email.errors['email']) {
+          } @if (email.errors['email']) {
           <div>Email must be a valid email address</div>
           }
         </div>
@@ -78,8 +85,7 @@
         <div class="invalid-feedback">
           @if (password.errors['required']) {
           <div>Password is required</div>
-          }
-          @if (password.errors['minlength']) {
+          } @if (password.errors['minlength']) {
           <div>Password must be at least 6 characters</div>
           }
         </div>
