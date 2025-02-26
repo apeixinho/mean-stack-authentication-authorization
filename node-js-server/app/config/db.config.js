@@ -1,5 +1,7 @@
 module.exports = {
   HOST: "127.0.0.1",
   PORT: 27017,
-  DB: "bezkoder_db"
+  DB: "bezkoder_db",
+  USER: "dev",
+  PASSWORD: "dev"
 };
